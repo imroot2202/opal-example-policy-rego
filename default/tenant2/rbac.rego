@@ -22,7 +22,7 @@ package app.rbac
 # import data.utils
 
 # By default, deny requests
-default allow = true
+default allow = false
 
 # Allow admins to do anything
 allow {
@@ -55,7 +55,7 @@ allow {
 
 	# unless user location is outside US
 	country := data.users[input.user].location.country
-	country == "ES"
+	country == "US"
 }
 
 # user_is_admin is true if...
