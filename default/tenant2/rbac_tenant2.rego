@@ -22,7 +22,7 @@ package app.rbac
 # import data.utils
 
 # By default, deny requests
-default allow = false
+default allow = true
 
 # Allow admins to do anything
 allow {
@@ -30,33 +30,33 @@ allow {
 }
 
 # Allow bob to do anything
-#allow {
-#	input.user == "bob"
-#}
+allow {
+	input.user == "bob"
+}
 
 # you can ignore this rule, it's simply here to create a dependency
 # to another rego policy file, so we can demonstate how to work with
 # an explicit manifest file (force order of policy loading).
-#allow {
-#	input.matching_policy.grants
-#	input.roles
-#	utils.hasPermission(input.matching_policy.grants, input.roles)
-#}
+allow {
+	input.matching_policy.grants
+	input.roles
+	utils.hasPermission(input.matching_policy.grants, input.roles)
+}
 
 # Allow the action if the user is granted permission to perform the action.
-allow {
+#allow {
 	# Find permissions for the user.
-	some permission
-	user_is_granted[permission]
+#	some permission
+#	user_is_granted[permission]
 
 	# Check if the permission permits the action.
-	input.action == permission.action
-	input.type == permission.type
+#	input.action == permission.action
+#	input.type == permission.type
 
 	# unless user location is outside US
-	country := data.users[input.user].location.country
-	country == "ES"
-}
+#	country := data.users[input.user].location.country
+#	country == "ES"
+#}
 
 # user_is_admin is true if...
 user_is_admin {
