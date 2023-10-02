@@ -33,19 +33,19 @@
     "customer": [
       {
         "action": "read",
-        "type": "dog"
+        "type": "dog1"
       },
       {
         "action": "read",
-        "type": "cat"
+        "type": "cat1"
       },
       {
         "action": "adopt",
-        "type": "dog"
+        "type": "dog1"
       },
       {
         "action": "adopt",
-        "type": "cat"
+        "type": "cat1"
       }
     ],
     "employee": [
