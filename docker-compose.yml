@@ -50,7 +50,7 @@ services:
       - OPAL_LOG_FORMAT_INCLUDE_PID=true
       - OPAL_INLINE_OPA_LOG_FORMAT=http
       - OPAL_DATA_TOPICS=policy_data
-      - OPAL_POLICY_SUBSCRIPTION_DIRS=default:tenants/tenant1
+      - OPAL_POLICY_SUBSCRIPTION_DIRS=default:tenants/channels-web/policies
       # Uncomment the following lines to enable storing & loading OPA data from a backup file:
       # - OPAL_OFFLINE_MODE_ENABLED=true
     # volumes:
@@ -76,7 +76,7 @@ services:
       - OPAL_LOG_FORMAT_INCLUDE_PID=true
       - OPAL_INLINE_OPA_LOG_FORMAT=http
       - OPAL_DATA_TOPICS=policy_data
-      - OPAL_POLICY_SUBSCRIPTION_DIRS=default:tenants/tenant2
+      - OPAL_POLICY_SUBSCRIPTION_DIRS=default:tenants/channels-web/tests
       # Uncomment the following lines to enable storing & loading OPA data from a backup file:
       # - OPAL_OFFLINE_MODE_ENABLED=true
     # volumes:
